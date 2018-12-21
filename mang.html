@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuc hanh mang</title>
+</head>
+<body>
+    <input type="text" id="txt"/>
+    <input type="button" id="btnadd" value="Add" onclick="add();"/>
+    <input type="button" id="btnDisplay" value="Display" onclick="display();"/>
+    <div id="resul"></div>
+</body>
+
+    <script>
+        var x = 0;
+        var array = Array();
+
+        function add(){
+            array[x] = document.getElementById("txt").value;
+            alert("ban vua them moi gia tri " + array[x] + " vao vi tri " + x + " trong mang");
+            x++;
+            document.getElementById("txt").value = " ";
+        }
+
+        function display(){
+            var e = '<hr>';
+            for(i = 0; i < array.length; i++){
+                e += "Element " + i + " = " + array[i] + "<br>";
+            }
+            document.getElementById("resul").innerHTML = e;
+        }
+    </script>
+</html>
